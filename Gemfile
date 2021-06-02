@@ -53,7 +53,7 @@ group :test do
 end
 
 group :production do
-  gem 'pg' # Can add a specific version, ex. '~> 0.21.0'
+  gem 'pg', '~> 1.1' # Can add a specific version
   gem 'rails_12factor'
 end
 
