@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root 'pages#home'
   get 'about', to: 'pages#about'
-  resources :articles, only: [:show, :index, :new, :create, :edit, :update]
+  # resources :articles, only: [:show, :index, :new, :create, :edit, :update, :destroy] # Can list routes individually like this in order to limit exposed routes, but since now using all routes, can use next line
+  resources :articles
 end
