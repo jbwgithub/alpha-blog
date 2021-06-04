@@ -9,14 +9,18 @@ class ArticlesController < ApplicationController
   end
 
   def new
-
+    @article = Article.new
   end
 
   def create
     # render plain: params[:article] # Just renders the object, in this case an article, to the console
-    @article = Article.new(params.require(:article).permit(:title, :description))
-    @article.save
-    redirect_to @article # The code on this line is a shortcut for: redirect_to article_path(@article)
+    @article = Article.new(params.require(:article).permit(:title, :description)) # called whitelisting
+    if @article.save
+      flash[:notice] = "Article was created successfully." # For flash display. Common flash keys: notice, alert
+      redirect_to @article # The code on this line is a shortcut for: redirect_to article_path(@article)
+    else
+      render 'new'
+    end
   end
 
 end
