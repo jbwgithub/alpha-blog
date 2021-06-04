@@ -13,7 +13,10 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    render plain: params[:article]
+    # render plain: params[:article] # Just renders the object, in this case an article, to the console
+    @article = Article.new(params.require(:article).permit(:title, :description))
+    @article.save
+    redirect_to @article # The code on this line is a shortcut for: redirect_to article_path(@article)
   end
 
 end
