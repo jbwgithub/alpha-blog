@@ -12,6 +12,10 @@ class ArticlesController < ApplicationController
     @article = Article.new
   end
 
+  def edit
+    @article = Article.find(params[:id])
+  end
+
   def create
     # render plain: params[:article] # Just renders the object, in this case an article, to the console
     @article = Article.new(params.require(:article).permit(:title, :description)) # called whitelisting
@@ -20,6 +24,16 @@ class ArticlesController < ApplicationController
       redirect_to @article # The code on this line is a shortcut for: redirect_to article_path(@article)
     else
       render 'new'
+    end
+  end
+
+  def update
+    @article = Article.find(params[:id])
+    if @article.update(params.require(:article).permit(:title, :description)) # whitelist
+      flash[:notice] = "Article was updated successfully."
+      redirect_to @article
+    else
+      render 'edit'
     end
   end
 
