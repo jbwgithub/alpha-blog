@@ -1,7 +1,9 @@
 class ArticlesController < ApplicationController
+  before_action :set_article, only: [:show, :edit, :update, :destroy]
 
   def show
-    @article = Article.find(params[:id]) # the '@' makes it an instance variable, which is necessary to make the variable (in this case an article, available in the the 'show' view)
+    # @article = Article.find(params[:id]) # Removed for refactoring
+    # the '@' makes it an instance variable, which is necessary to make the variable (in this case an article, available in the the 'show' view)
   end
 
   def index
@@ -13,12 +15,12 @@ class ArticlesController < ApplicationController
   end
 
   def edit
-    @article = Article.find(params[:id])
+    # @article = Article.find(params[:id]) # Removed for refactoring
   end
 
   def create
     # render plain: params[:article] # Just renders the object, in this case an article, to the console
-    @article = Article.new(params.require(:article).permit(:title, :description)) # called whitelisting
+    @article = Article.new(article_params) # whitelist
     if @article.save
       flash[:notice] = "Article was created successfully." # For flash display. Common flash keys: notice, alert
       redirect_to @article # The code on this line is a shortcut for: redirect_to article_path(@article)
@@ -28,8 +30,8 @@ class ArticlesController < ApplicationController
   end
 
   def update
-    @article = Article.find(params[:id])
-    if @article.update(params.require(:article).permit(:title, :description)) # whitelist
+    # @article = Article.find(params[:id]) # Removed for refactoring
+    if @article.update(article_params) # whitelist
       flash[:notice] = "Article was updated successfully."
       redirect_to @article
     else
@@ -38,9 +40,18 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
-    @article = Article.find(params[:id])
+    # @article = Article.find(params[:id]) # Removed for refactoring
     @article.destroy
     redirect_to articles_path
   end
 
+  private # Below this keyword are methods that are private and only usable to other methods within controller
+
+  def set_article
+    @article = Article.find(params[:id])
+  end
+
+  def article_params
+    params.require(:article).permit(:title, :description) # called whitelisting
+  end
 end

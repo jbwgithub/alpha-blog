@@ -10,4 +10,7 @@ resources provides REST-ful routes to Rails resources
   * Another default, when calling a method an instance, the default assumed method is `GET`. I.e., when trying to link to a single article, this `article_method(@article), method: :get` could be shortened to `article_path(@article)`. For other methods, like DELETE for exmaple, it is still necesary to call `method: :delete`
   * For similar actions, like PUT & PATCH, the action can be called as part of the article path term `edit_article_path(@article)`
 
+* DRY Code: Partials are used to extract redundant or bulky code from a file, and make resusable
+  * an example of a partial can be seen in the `views/layouts/application.html.erb` file, where the HTML tag for creating flash messages is rendered using a partial. The partial file is in the same folder under `views/layouts/_messages.html.erb`
+
 * Add notes here
