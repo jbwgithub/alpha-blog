@@ -27,10 +27,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   height: 425px;
-}
-
-#jumbotron-header {
-  vertical-align: middle;
+  padding-top: 75px; // Had to add in addition in order to vertical-align
 }
 
 html,

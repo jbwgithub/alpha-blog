@@ -13,7 +13,7 @@ resources provides REST-ful routes to Rails resources
 * DRY Code: Partials are used to extract redundant or bulky code from a file, and make resusable
   * an example of a partial can be seen in the `views/layouts/application.html.erb` file, where the HTML tag for creating flash messages is rendered using a partial. The partial file is in the same folder under `views/layouts/_messages.html.erb`
 
-* Example of how to put a link in an HTML (html.erb) page view file, to navigate to another page. In this example, to the Articles listing page, `<%= link_to 'Articles listing', articles_path %>`
+* Example of how to put a link in an HTML (html.erb) page view file, to navigate to another page. In this example, the link navigates to the Articles listing page, `<%= link_to 'Articles listing', articles_path %>`. And in this example, to the Create new article page `<%= link_to 'Create new article', new_article_path %>`
 
 * Styling reminder: In CSS `.` is for a class, and `#` is for an ID
 
