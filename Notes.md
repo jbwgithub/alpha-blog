@@ -17,4 +17,6 @@ resources provides REST-ful routes to Rails resources
 
 * Styling reminder: In CSS `.` is for a class, and `#` is for an ID
 
+* Shovel operator: `<<`. Is used to 'shovel' in an object to a db object, for example a User in a model table
+
 * Add notes here
