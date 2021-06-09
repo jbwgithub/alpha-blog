@@ -19,4 +19,6 @@ resources provides REST-ful routes to Rails resources
 
 * Shovel operator: `<<`. Is used to 'shovel' in an object to a db object, for example a User in a model table
 
+* Remember: When adding a new table, or editing an existing table in a feature branch, always remember to switch back to the main branch and run a migration `rails db:migarte`, so that changes to the table/model are reflected in main branch
+
 * Add notes here
