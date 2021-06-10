@@ -21,4 +21,6 @@ resources provides REST-ful routes to Rails resources
 
 * Reminder: When adding a new table (via `generate`) or editing an existing table, always remember to run a migration `rails db:migrate`, so that the changes to the table/model are reflected in the db
 
+* Reminder: When deploying code do production (in this case Heroku), if changes have been made to the db tables the following migration must be run on the production terminal for the db changes to be reflected: `heroku run rails db:migrate`
+
 * Add notes here
