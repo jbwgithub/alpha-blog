@@ -21,7 +21,7 @@ class ArticlesController < ApplicationController
   def create
     # render plain: params[:article] # Just renders the object, in this case an article, to the console
     @article = Article.new(article_params) # whitelist
-    @article.user = User.first # Temporary fix to assign first user to any new created article
+    @article.user = current_user
     if @article.save
       flash[:notice] = "Article was created successfully." # For flash display. Common flash keys: notice, alert
       redirect_to @article # The code on this line is a shortcut for: redirect_to article_path(@article)
