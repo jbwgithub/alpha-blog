@@ -55,7 +55,7 @@ class ArticlesController < ApplicationController
   end
 
   def article_params
-    params.require(:article).permit(:title, :description) # called whitelisting
+    params.require(:article).permit(:title, :description, category_ids: []) # called whitelisting
   end
 
   def require_same_user
