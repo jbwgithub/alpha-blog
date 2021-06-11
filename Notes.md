@@ -23,4 +23,6 @@ resources provides REST-ful routes to Rails resources
 
 * Reminder: When deploying code do production (in this case Heroku), if changes have been made to the db tables the following migration must be run on the production terminal for the db changes to be reflected: `heroku run rails db:migrate`
 
+* Rails uses a complete test suite called `Minitest` for TDD
+
 * Add notes here

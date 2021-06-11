@@ -21,6 +21,8 @@ gem 'jbuilder', '~> 2.7'
 gem 'bcrypt', '~> 3.1.7'
 # For pagination
 gem 'will_paginate', '~> 3.3.0'
+# Need to deactivate REXML, which this version of Ruby automatically includes, to fix 'rails test' issue
+gem 'rexml', require: false
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
