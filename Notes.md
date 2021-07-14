@@ -25,4 +25,4 @@ resources provides REST-ful routes to Rails resources
 
 * Rails uses a complete test suite called `Minitest` for TDD
 
-* Add notes here
+* Add more notes here
