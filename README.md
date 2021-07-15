@@ -2,6 +2,8 @@
 
 &#8594; To view the production site, click [here](https://alpha-blog-jbw.herokuapp.com)
 
+  * This site may be temporarily unavailable for maintenance
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
